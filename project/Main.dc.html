@@ -1,0 +1,207 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>Build Your AI Content Engine — Waitlist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+<style>
+  :root{
+    --red: #CC112C; --red-deep: #A30D23; --red-tint: rgba(204,17,44,0.06); --red-tint-strong: rgba(204,17,44,0.1);
+    --ink: #111111; --muted: #5E5E63; --rule: #E7E5E0; --paper: #FFFFFF;
+  }
+  body { margin: 0; font-family: 'Inter', system-ui, sans-serif; background: var(--paper); color: var(--ink); font-size: 16px; }
+  h1, h2, h3 { font-family: 'Anton', sans-serif; font-weight: 400; letter-spacing: -0.01em; line-height: 0.98; margin: 0; text-transform: none; color: var(--ink); }
+  a { color: var(--red); text-decoration: none; } a:hover { color: var(--red-deep); }
+  * { box-sizing: border-box; }
+  .mono { font-family: 'JetBrains Mono', ui-monospace, monospace; letter-spacing: 0.06em; }
+  .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red); display: inline-flex; align-items: center; gap: 10px; }
+  .eyebrow .dot { display: inline-block; width: 4px; height: 4px; background: var(--red); border-radius: 999px; }
+  input::placeholder { color: #a7a39a; }
+  .cw-input { padding: 13px 14px; border-radius: 10px; border: 1px solid var(--rule); background: #fff; color: var(--ink); font-size: 14.5px; font-family: inherit; width: 100%; }
+  .cw-input:focus { outline: 2px solid var(--red); outline-offset: 1px; border-color: var(--red); }
+  .cw-btn { cursor: pointer; border: none; }
+  .cw-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+  .cw-ph { border: 2px dashed rgba(17,17,17,0.16); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: var(--muted); text-align: center; background: #FAFAF8; }
+  .nav-link { font-size: 14.5px; font-weight: 600; color: var(--ink); }
+  .nav-link:hover { color: var(--red); }
+  .nav-link--on-red { color: #fff; }
+  .nav-link--on-red:hover { color: #F4ECDA; }
+
+  @keyframes marquee-loop {
+    from { transform: translateX(0); }
+    to   { transform: translateX(-50%); }
+  }
+  .marquee-track { animation: marquee-loop 48s linear infinite; }
+  .marquee-track:hover { animation-play-state: paused; }
+  .marquee-tile { width: 76px; height: 76px; min-width: 76px; border-radius: 16px; background: #FAFAF8; border: 1px solid var(--rule); overflow: hidden; }
+</style>
+</helmet>
+
+<div style="width: 100%; display: flex; flex-direction: column; align-items: center; background: var(--paper); overflow-x: hidden;">
+
+  <!-- ===== NAV — red bg (logo only reads on red), rest of page stays white ===== -->
+  <div style="width: 100%; background: var(--red); position: relative; z-index: 2;">
+    <div style="width: 100%; max-width: 1200px; margin: 0 auto; padding: 18px 24px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
+      <a href="#" style="display: flex; align-items: center; gap: 2px;">
+        <img src="/_blob/ceb4c1d3ca15363ef2082864ff814262" alt="Co-Work &amp;" style="height: 34px; width: auto; display: block;">
+      </a>
+      <div style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap;">
+        <a href="#" class="nav-link nav-link--on-red">Home</a>
+        <a href="#contact" class="nav-link nav-link--on-red">Contact</a>
+        <a href="Waitlist.dc.html" class="nav-link nav-link--on-red">Get Notified</a>
+      </div>
+      <a href="Waitlist.dc.html" class="cw-btn mono" style="background: #fff; color: var(--red); font-weight: 700; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; padding: 11px 18px; border-radius: 9px; white-space: nowrap; display: inline-flex; align-items: center; gap: 8px;">
+        Reserve a spot
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="#CC112C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </a>
+    </div>
+  </div>
+
+  <!-- ===== FLOATING STRIP — same width as the nav's inner container, 10px below it ===== -->
+  <div style="width: 100%; display: flex; justify-content: center; position: relative; z-index: 3; margin-top: 10px; padding: 0 24px;">
+    <div aria-hidden="true" style="max-width: 1200px; width: 100%; background: #fff; border: 1px solid var(--rule); border-radius: 20px; box-shadow: 0 10px 30px rgba(17,17,17,0.08); padding: 14px; overflow: hidden;">
+      <div class="marquee-track" style="display: flex; gap: 14px; width: max-content;">
+        <div class="marquee-tile"><img src="/_blob/357fe501a108b5cd8c0af3e0d2b2206d" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+        <div class="marquee-tile"><img src="/_blob/9a1209fa8827a1cd3147ffe7d23779a8" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+        <div class="marquee-tile"><img src="/_blob/47ed1fdacae8d0c33d98cb2bf8293ae5" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+        <div class="marquee-tile"><img src="/_blob/0c757f3ca20e7d7f0026678d20814832" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+        <div class="marquee-tile"><img src="/_blob/ae55cae3b7b83a091d572fd6ca0c8f07" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+        <div class="marquee-tile"><img src="/_blob/357fe501a108b5cd8c0af3e0d2b2206d" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+        <div class="marquee-tile"><img src="/_blob/9a1209fa8827a1cd3147ffe7d23779a8" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+        <div class="marquee-tile"><img src="/_blob/47ed1fdacae8d0c33d98cb2bf8293ae5" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+        <div class="marquee-tile"><img src="/_blob/0c757f3ca20e7d7f0026678d20814832" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+        <div class="marquee-tile"><img src="/_blob/ae55cae3b7b83a091d572fd6ca0c8f07" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+        <div class="marquee-tile"><img src="/_blob/357fe501a108b5cd8c0af3e0d2b2206d" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+        <div class="marquee-tile"><img src="/_blob/9a1209fa8827a1cd3147ffe7d23779a8" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+        <div class="marquee-tile"><img src="/_blob/47ed1fdacae8d0c33d98cb2bf8293ae5" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+        <div class="marquee-tile"><img src="/_blob/0c757f3ca20e7d7f0026678d20814832" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+        <div class="marquee-tile"><img src="/_blob/ae55cae3b7b83a091d572fd6ca0c8f07" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+        <!-- duplicate half, so the loop (translateX -50%) is seamless -->
+        <div class="marquee-tile"><img src="/_blob/357fe501a108b5cd8c0af3e0d2b2206d" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+        <div class="marquee-tile"><img src="/_blob/9a1209fa8827a1cd3147ffe7d23779a8" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+        <div class="marquee-tile"><img src="/_blob/47ed1fdacae8d0c33d98cb2bf8293ae5" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+        <div class="marquee-tile"><img src="/_blob/0c757f3ca20e7d7f0026678d20814832" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+        <div class="marquee-tile"><img src="/_blob/ae55cae3b7b83a091d572fd6ca0c8f07" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+        <div class="marquee-tile"><img src="/_blob/357fe501a108b5cd8c0af3e0d2b2206d" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+        <div class="marquee-tile"><img src="/_blob/9a1209fa8827a1cd3147ffe7d23779a8" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+        <div class="marquee-tile"><img src="/_blob/47ed1fdacae8d0c33d98cb2bf8293ae5" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+        <div class="marquee-tile"><img src="/_blob/0c757f3ca20e7d7f0026678d20814832" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+        <div class="marquee-tile"><img src="/_blob/ae55cae3b7b83a091d572fd6ca0c8f07" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+        <div class="marquee-tile"><img src="/_blob/357fe501a108b5cd8c0af3e0d2b2206d" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+        <div class="marquee-tile"><img src="/_blob/9a1209fa8827a1cd3147ffe7d23779a8" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+        <div class="marquee-tile"><img src="/_blob/47ed1fdacae8d0c33d98cb2bf8293ae5" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+        <div class="marquee-tile"><img src="/_blob/0c757f3ca20e7d7f0026678d20814832" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+        <div class="marquee-tile"><img src="/_blob/ae55cae3b7b83a091d572fd6ca0c8f07" alt="Co-Work &amp; cohort" style="width: 100%; height: 100%; object-fit: cover; border-radius: 15px;"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ===== HERO — photo left, text + CTA right ===== -->
+  <div style="width: 100%; max-width: 1200px; margin: 0 auto; padding: 64px 24px 56px; display: flex; flex-wrap: wrap; gap: 56px; align-items: center;">
+
+    <!-- Photo space (now on the left) -->
+    <div style="flex: 1 1 380px; min-width: 300px; max-width: 460px; display: flex; flex-direction: column; gap: 10px; order: 1;">
+      <div style="width: 100%; aspect-ratio: 4 / 5; border-radius: 22px; position: relative; overflow: hidden; background: #FAFAF8;">
+        <img src="/_blob/357fe501a108b5cd8c0af3e0d2b2206d" alt="Vidushi Malhan presenting Co-Work &amp;" style="width: 100%; height: 100%; object-fit: cover; display: block;">
+        <div class="mono" style="position: absolute; bottom: 16px; left: 16px; right: 16px; background: #fff; border: 1px solid var(--rule); border-radius: 10px; padding: 10px 14px; font-size: 11.5px; font-weight: 600; color: var(--ink); display: flex; align-items: center; gap: 8px;">
+          <span style="width: 6px; height: 6px; border-radius: 999px; background: var(--red); display: inline-block;"></span>
+          Hosted by Vidushi Malhan
+        </div>
+      </div>
+    </div>
+
+    <!-- Text + CTA card (now on the right) -->
+    <div style="flex: 1 1 480px; min-width: 300px; display: flex; flex-direction: column; gap: 22px; order: 2;">
+      <span class="eyebrow"><span class="dot"></span>4-WEEK ONLINE COHORT<span class="dot"></span>€199 · 25 SEATS</span>
+
+      <h1 style="font-size: 46px; max-width: 560px;">Build Your AI Content Engine — Waitlist</h1>
+
+      <p style="font-size: 16px; line-height: 1.65; color: var(--muted); max-width: 520px; margin: 0;">Our most popular workshop is now becoming a 4 week online cohort!</p>
+
+      <p style="font-size: 16px; line-height: 1.65; color: var(--muted); max-width: 520px; margin: 0;">If you're a marketer, founder or creator curious about using Claude Code for marketing, this is for you. We'll take you beyond simply connecting Claude Code to Notion and help you understand the tools, concepts and skills needed to build your own AI powered content engine from scratch.</p>
+
+      <p style="font-size: 16px; line-height: 1.65; color: var(--muted); max-width: 520px; margin: 0;">Over 3 in depth live sessions and a dedicated Q&amp;A, you'll learn how to build a system that understands your brand, plans and creates an entire month's worth of content in one go, and gets better with time.</p>
+
+      <p style="font-size: 16px; line-height: 1.65; color: var(--muted); max-width: 520px; margin: 0;">We're keeping the first cohort small, with just 25 spots available at an introductory price of <strong style="color: var(--ink);">€199</strong>.</p>
+
+      <p style="font-size: 16px; line-height: 1.65; color: var(--muted); max-width: 520px; margin: 0;">Want to be part of the first batch? Join the waitlist to get early updates when registration opens and be among the first to secure your spot.</p>
+
+      <!-- ===== CTA — clean single card, links to its own page ===== -->
+      <div style="position: relative; max-width: 420px; margin-top: 6px;">
+        <div style="position: relative; background: var(--red-tint); border: 1px solid rgba(204,17,44,0.18); border-radius: 20px; padding: 26px 24px; display: flex; flex-direction: column; gap: 14px;">
+          <div class="mono" style="position: absolute; top: -12px; left: 22px; background: var(--red); color: #fff; font-size: 10px; font-weight: 700; letter-spacing: 0.2em; padding: 6px 12px; border-radius: 999px;">WAITLIST OPEN</div>
+          <div style="display: flex; align-items: center; gap: 12px; margin-top: 6px;">
+            <div style="width: 40px; height: 40px; min-width: 40px; border-radius: 11px; background: var(--red); display: flex; align-items: center; justify-content: center;">
+              <svg width="19" height="19" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 2a6 6 0 0 0-6 6v3.09c0 .6-.24 1.17-.67 1.59L4 14h16l-1.33-1.32a2.25 2.25 0 0 1-.67-1.59V8a6 6 0 0 0-6-6Z" stroke="#fff" stroke-width="1.7" stroke-linejoin="round"/><path d="M9.5 18a2.5 2.5 0 0 0 5 0" stroke="#fff" stroke-width="1.7" stroke-linecap="round"/></svg>
+            </div>
+            <h2 style="font-size: 19px;">Reserve your spot</h2>
+          </div>
+          <p style="font-size: 13.5px; line-height: 1.5; color: var(--muted); margin: 0;">Be first to hear the moment registration opens — before seats run out.</p>
+          <a href="Waitlist.dc.html" class="cw-btn mono" style="margin-top: 4px; background: var(--red); color: #fff; font-weight: 700; font-size: 13px; letter-spacing: 0.12em; text-transform: uppercase; padding: 15px; border-radius: 10px; display: flex; align-items: center; justify-content: center; gap: 8px;">
+            Join the waitlist
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </a>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- ===== DETAILS — what you'll build + logistics ===== -->
+  <div style="width: 100%; max-width: 1200px; margin: 0 auto; padding: 104px 24px 72px;">
+    <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 24px;">
+
+      <div style="background: #FAFAF8; border: 1px solid var(--rule); border-radius: 22px; padding: 34px;">
+        <div class="mono" style="font-size: 11.5px; color: var(--red); margin-bottom: 14px;">WHAT YOU'LL BUILD</div>
+        <h2 style="font-size: 27px; margin-bottom: 20px;">A content engine that runs on one push a month.</h2>
+        <ul style="list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 14px;">
+          <li style="display: flex; gap: 10px; font-size: 14.5px; line-height: 1.5; color: var(--muted);"><span style="color: var(--red); font-weight: 700;">—</span> A system that understands your brand voice and foundations</li>
+          <li style="display: flex; gap: 10px; font-size: 14.5px; line-height: 1.5; color: var(--muted);"><span style="color: var(--red); font-weight: 700;">—</span> A content engine that plans &amp; generates a month of content in one go</li>
+          <li style="display: flex; gap: 10px; font-size: 14.5px; line-height: 1.5; color: var(--muted);"><span style="color: var(--red); font-weight: 700;">—</span> The foundational Claude Code concepts, tools and skills — beyond just Notion</li>
+          <li style="display: flex; gap: 10px; font-size: 14.5px; line-height: 1.5; color: var(--muted);"><span style="color: var(--red); font-weight: 700;">—</span> A loop that keeps improving the system over time</li>
+        </ul>
+      </div>
+
+      <div style="background: #FAFAF8; border: 1px solid var(--rule); border-radius: 22px; padding: 34px;">
+        <div class="mono" style="font-size: 11.5px; color: var(--red); margin-bottom: 14px;">LOGISTICS</div>
+        <h2 style="font-size: 27px; margin-bottom: 20px;">Everything you need to know.</h2>
+        <div style="display: flex; flex-direction: column; gap: 12px; font-size: 14.5px; line-height: 1.6; color: var(--muted);">
+          <div><strong style="color: var(--ink);">Format:</strong> 4-week online cohort — 3 live classes + 1 dedicated Q&amp;A session</div>
+          <div><strong style="color: var(--ink);">Who it's for:</strong> marketers, founders and creators who want to use Claude Code for marketing</div>
+          <div><strong style="color: var(--ink);">Price:</strong> €199 introductory price — limited to the first 25 participants</div>
+          <div><strong style="color: var(--ink);">Host:</strong> Vidushi Malhan (Co-Work &amp;)</div>
+          <div><strong style="color: var(--ink);">When:</strong> <span style="color: var(--red); font-weight: 700;">Cohort dates — confirm before publishing</span></div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- ===== FOOTER ===== -->
+  <div id="contact" style="width: 100%; border-top: 1px solid var(--rule);">
+    <div style="width: 100%; max-width: 1200px; margin: 0 auto; padding: 28px 24px 36px; display: flex; flex-wrap: wrap; justify-content: space-between; align-items: center; gap: 14px;">
+      <span style="font-family: 'Anton', sans-serif; font-size: 20px; color: var(--ink);">Co-Work &amp;</span>
+      <div class="mono" style="font-size: 12px; color: var(--muted); display: flex; align-items: center; gap: 8px;">
+        <span style="width: 6px; height: 6px; border-radius: 999px; background: var(--red); display: inline-block;"></span>
+        First cohort · 25 seats · €199
+      </div>
+    </div>
+  </div>
+
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1480}}'>
+class Component extends DCLogic {
+  renderVals() {
+    return {};
+  }
+}
+</script>
+</body>
+</html>

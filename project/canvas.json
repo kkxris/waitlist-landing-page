@@ -1,0 +1,14 @@
+{
+  "v": 3,
+  "createdOnFiles": { "v": 1, "at": "2026-11-09T07:45:00Z" },
+  "title": "AI Content Engine — Waitlist Landing Page",
+  "launch": { "view": "focused", "file": "Main.dc.html" },
+  "pages": [],
+  "boards": {
+    "Main.dc.html": { "x": 0, "y": 0, "w": 1280, "h": 1480, "expand": "fill", "is_interactive": true, "title": "Waitlist landing page" },
+    "Waitlist.dc.html": { "x": 1360, "y": 0, "w": 1280, "h": 900, "expand": "fill", "is_interactive": true, "title": "Join the waitlist (form page)" }
+  },
+  "order": ["Main.dc.html", "Waitlist.dc.html"],
+  "notes": {},
+  "designSystems": []
+}

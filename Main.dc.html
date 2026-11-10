@@ -2,10 +2,16 @@
 <html lang="en">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Build Your AI Content Engine — Waitlist</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="./vendor/react.js"></script>
+<script src="./vendor/react-dom.js"></script>
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
 <style>
   :root{
     --red: #CC112C; --red-deep: #A30D23; --red-tint: rgba(204,17,44,0.06); --red-tint-strong: rgba(204,17,44,0.1);
@@ -19,8 +25,11 @@
   .eyebrow { font-family: 'JetBrains Mono', monospace; font-size: 11.5px; font-weight: 600; letter-spacing: 0.18em; text-transform: uppercase; color: var(--red); display: inline-flex; align-items: center; gap: 10px; }
   .eyebrow .dot { display: inline-block; width: 4px; height: 4px; background: var(--red); border-radius: 999px; }
   input::placeholder { color: #a7a39a; }
+  .cw-input { padding: 13px 14px; border-radius: 10px; border: 1px solid var(--rule); background: #fff; color: var(--ink); font-size: 14.5px; font-family: inherit; width: 100%; }
+  .cw-input:focus { outline: 2px solid var(--red); outline-offset: 1px; border-color: var(--red); }
   .cw-btn { cursor: pointer; border: none; }
   .cw-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+  .cw-ph { border: 2px dashed rgba(17,17,17,0.16); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px; color: var(--muted); text-align: center; background: #FAFAF8; }
   .nav-link { font-size: 14.5px; font-weight: 600; color: var(--ink); }
   .nav-link:hover { color: var(--red); }
   .nav-link--on-red { color: #fff; }
@@ -53,13 +62,8 @@
   .cw-pill-input:focus { outline: 2px solid var(--red); outline-offset: 1px; border-color: var(--red); }
   .cw-pill-btn { width: 100%; padding: 18px; border-radius: 999px; border: none; background: var(--red); color: #fff; font-family: 'Inter', sans-serif; font-weight: 700; font-size: 17px; cursor: pointer; box-shadow: 0 10px 24px rgba(204,17,44,0.25); transition: 0.2s; }
   .cw-pill-btn:hover { background: var(--red-deep); transform: translateY(-1px); }
-
-  #cta-success { display: none; }
-  #cta-success.is-visible { display: flex; }
-  #cta-form.is-hidden { display: none; }
 </style>
-</head>
-<body>
+</helmet>
 
 <div style="width: 100%; display: flex; flex-direction: column; align-items: center; background: var(--paper); overflow-x: hidden;">
 
@@ -67,7 +71,7 @@
   <div style="width: 100%; background: var(--red); position: relative; z-index: 2;">
     <div style="width: 100%; max-width: 1200px; margin: 0 auto; padding: 22px 48px; display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 14px;">
       <a href="#" style="display: flex; align-items: center; gap: 2px;">
-        <img src="images/logo-white.png" alt="Co-Work &amp;" style="height: 34px; width: auto; display: block;">
+        <img src="./assets/ceb4c1d3ca15363ef2082864ff814262.png" alt="Co-Work &amp;" style="height: 34px; width: auto; display: block;">
       </a>
       <div style="display: flex; align-items: center; gap: 28px; flex-wrap: wrap;">
         <a href="#" class="nav-link nav-link--on-red">Home</a>
@@ -75,7 +79,7 @@
       </div>
       <a href="#cta" class="cw-btn mono" style="background: #fff; color: var(--red); font-weight: 700; font-size: 12.5px; letter-spacing: 0.1em; text-transform: uppercase; padding: 11px 18px; border-radius: 9px; white-space: nowrap; display: inline-flex; align-items: center; gap: 8px;">
         Reserve a spot
-        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="#CC112C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        <svg width="13" height="13" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6" stroke="#CC112C" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path></svg>
       </a>
     </div>
   </div>
@@ -87,11 +91,11 @@
     <div style="flex: 1 1 380px; min-width: 300px; max-width: 440px; display: flex; flex-direction: column; order: 1;">
       <div style="width: 100%; aspect-ratio: 4 / 5; border-radius: 22px; position: relative; overflow: hidden; background: #FAFAF8; box-shadow: 0 20px 40px rgba(17,17,17,0.1);">
         <div class="hero-slideshow">
-          <img class="hero-slide" src="images/hero-main.jpg" alt="Co-Work &amp; cohort" style="animation-delay: 0s;">
-          <img class="hero-slide" src="images/carousel-1.jpg" alt="Co-Work &amp; cohort" style="animation-delay: 4s;">
-          <img class="hero-slide" src="images/carousel-2.jpg" alt="Co-Work &amp; cohort" style="animation-delay: 8s;">
-          <img class="hero-slide" src="images/carousel-3.jpg" alt="Co-Work &amp; cohort" style="animation-delay: 12s;">
-          <img class="hero-slide" src="images/carousel-4.jpg" alt="Co-Work &amp; cohort" style="animation-delay: 16s;">
+          <img class="hero-slide" src="./assets/357fe501a108b5cd8c0af3e0d2b2206d.jpg" alt="Co-Work &amp; cohort" style="animation-delay: 0s;">
+          <img class="hero-slide" src="./assets/9a1209fa8827a1cd3147ffe7d23779a8.jpg" alt="Co-Work &amp; cohort" style="animation-delay: 4s;">
+          <img class="hero-slide" src="./assets/47ed1fdacae8d0c33d98cb2bf8293ae5.jpg" alt="Co-Work &amp; cohort" style="animation-delay: 8s;">
+          <img class="hero-slide" src="./assets/0c757f3ca20e7d7f0026678d20814832.jpg" alt="Co-Work &amp; cohort" style="animation-delay: 12s;">
+          <img class="hero-slide" src="./assets/ae55cae3b7b83a091d572fd6ca0c8f07.jpg" alt="Co-Work &amp; cohort" style="animation-delay: 16s;">
         </div>
       </div>
     </div>
@@ -108,7 +112,7 @@
 
       <p style="font-size: 16px; line-height: 1.7; color: var(--muted); max-width: 480px; margin: 0;">We start right at the basics, Claude Code and GitHub, and the most important tech concepts you need to know as a non-coder. And by the end, you'll have built your very own content system with Notion and Claude Code, completely from scratch.</p>
 
-      <p style="font-size: 16px; line-height: 1.7; color: var(--muted); max-width: 480px; margin: 0;">Because we're not stopping at &ldquo;connect Claude Code to Notion.&rdquo; We'll help you build a real AI-powered content engine. One that understands your brand, plans and creates a whole month of content for you, and quietly gets smarter the more you use it.</p>
+      <p style="font-size: 16px; line-height: 1.7; color: var(--muted); max-width: 480px; margin: 0;">Because we're not stopping at “connect Claude Code to Notion.” We'll help you build a real AI-powered content engine. One that understands your brand, plans and creates a whole month of content for you, and quietly gets smarter the more you use it.</p>
 
       <p style="font-size: 16px; line-height: 1.7; color: var(--muted); max-width: 480px; margin: 0;">This one is for marketers, content creators or anyone who wants to learn how to use AI the right way! We're opening the first cohort to just 25 people, at an introductory price of <strong style="color: var(--ink);">€199</strong>.</p>
 
@@ -118,7 +122,7 @@
       <div id="cta" style="max-width: 460px; margin-top: 10px; scroll-margin-top: 110px;">
         <div style="background: #FAFAF8; border: 1px solid var(--rule); border-radius: 28px; padding: 36px 32px; box-shadow: 0 20px 50px rgba(17,17,17,0.08);">
 
-          <div id="cta-form">
+          <sc-if value="{{ isForm }}" hint-placeholder-val="{{ true }}">
             <h2 style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 23px; line-height: 1.35; letter-spacing: -0.01em; color: var(--ink); margin: 0 0 24px; text-transform: none;">To join the waitlist and be the first to hear when registration opens, enter your details below 👇</h2>
 
             <div style="display: flex; flex-direction: column; gap: 14px;">
@@ -131,26 +135,26 @@
               If you'd also like occasional updates on future Co-Work &amp; workshops and events, tick this box.
             </label>
 
-            <button type="button" class="cw-pill-btn" onclick="joinWaitlist()" style="margin-top: 20px;">Join the Waitlist</button>
+            <button type="button" class="cw-pill-btn" onClick="{{ joinWaitlist }}" style="margin-top: 20px;">Join the Waitlist</button>
 
             <p style="margin: 16px 0 0; font-size: 12px; line-height: 1.6; color: var(--muted); text-align: center;">By submitting this form, you'll be added to the waitlist for <strong style="color: var(--ink);">Build Your AI Content Engine</strong>. We'll only email you when registration opens.</p>
-          </div>
+          </sc-if>
 
-          <div id="cta-success" style="flex-direction: column; align-items: center; text-align: center; gap: 14px; padding: 12px 0;">
-            <div class="success-wrap" style="display: flex; flex-direction: column; align-items: center; gap: 14px;">
+          <sc-if value="{{ isSuccess }}" hint-placeholder-val="{{ false }}">
+            <div class="success-wrap" style="display: flex; flex-direction: column; align-items: center; text-align: center; gap: 14px; padding: 12px 0;">
               <div style="position: relative; width: 60px; height: 60px;">
                 <div class="success-badge" style="width: 60px; height: 60px; border-radius: 999px; background: var(--red); display: flex; align-items: center; justify-content: center;">
-                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <svg width="26" height="26" viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 13l4 4L19 7" stroke="#fff" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"></path></svg>
                 </div>
-                <svg class="spark" style="top: -14px; left: -17px; animation-delay: 60ms;" width="16" height="16" viewBox="0 0 24 24" fill="var(--red)" aria-hidden="true"><path d="M12 0l1.8 8.2L22 10l-8.2 1.8L12 20l-1.8-8.2L2 10l8.2-1.8z"/></svg>
-                <svg class="spark" style="top: -8px; right: -21px; animation-delay: 220ms;" width="11" height="11" viewBox="0 0 24 24" fill="var(--red)" aria-hidden="true"><path d="M12 0l1.8 8.2L22 10l-8.2 1.8L12 20l-1.8-8.2L2 10l8.2-1.8z"/></svg>
-                <svg class="spark" style="bottom: -11px; left: -6px; animation-delay: 360ms;" width="9" height="9" viewBox="0 0 24 24" fill="var(--red)" aria-hidden="true"><path d="M12 0l1.8 8.2L22 10l-8.2 1.8L12 20l-1.8-8.2L2 10l8.2-1.8z"/></svg>
-                <svg class="spark" style="bottom: -14px; right: -4px; animation-delay: 140ms;" width="14" height="14" viewBox="0 0 24 24" fill="var(--red)" aria-hidden="true"><path d="M12 0l1.8 8.2L22 10l-8.2 1.8L12 20l-1.8-8.2L2 10l8.2-1.8z"/></svg>
+                <svg class="spark" style="top: -14px; left: -17px; animation-delay: 60ms;" width="16" height="16" viewBox="0 0 24 24" fill="var(--red)" aria-hidden="true"><path d="M12 0l1.8 8.2L22 10l-8.2 1.8L12 20l-1.8-8.2L2 10l8.2-1.8z"></path></svg>
+                <svg class="spark" style="top: -8px; right: -21px; animation-delay: 220ms;" width="11" height="11" viewBox="0 0 24 24" fill="var(--red)" aria-hidden="true"><path d="M12 0l1.8 8.2L22 10l-8.2 1.8L12 20l-1.8-8.2L2 10l8.2-1.8z"></path></svg>
+                <svg class="spark" style="bottom: -11px; left: -6px; animation-delay: 360ms;" width="9" height="9" viewBox="0 0 24 24" fill="var(--red)" aria-hidden="true"><path d="M12 0l1.8 8.2L22 10l-8.2 1.8L12 20l-1.8-8.2L2 10l8.2-1.8z"></path></svg>
+                <svg class="spark" style="bottom: -14px; right: -4px; animation-delay: 140ms;" width="14" height="14" viewBox="0 0 24 24" fill="var(--red)" aria-hidden="true"><path d="M12 0l1.8 8.2L22 10l-8.2 1.8L12 20l-1.8-8.2L2 10l8.2-1.8z"></path></svg>
               </div>
               <h2 style="font-family: 'Inter', sans-serif; font-weight: 800; font-size: 21px; color: var(--ink);">You're on the list!</h2>
               <p style="font-size: 13.5px; line-height: 1.5; color: var(--muted); margin: 0;">We'll email you the moment registration opens.</p>
             </div>
-          </div>
+          </sc-if>
         </div>
       </div>
     </div>
@@ -158,12 +162,22 @@
   </div>
 
 </div>
-
-<script>
-  function joinWaitlist() {
-    document.getElementById('cta-form').classList.add('is-hidden');
-    document.getElementById('cta-success').classList.add('is-visible');
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props='{"$preview":{"width":1280,"height":1020}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { stage: 'form' };
   }
+  renderVals() {
+    const stage = this.state.stage || 'form';
+    return {
+      isForm: stage === 'form',
+      isSuccess: stage === 'success',
+      joinWaitlist: () => this.setState({ stage: 'success' })
+    };
+  }
+}
 </script>
 </body>
 </html>
